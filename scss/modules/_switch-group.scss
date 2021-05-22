@@ -1,0 +1,73 @@
+
+
+.switch-group{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: flex;
+    align-items: center;
+    @include mobile{
+        span{
+            display: none;
+        }
+    }
+    .switch{
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        background: #fff;
+        padding: 4px;
+        border: 1px solid #aaa;
+        border-radius: 25px;
+        margin-right: 8px;
+        position: relative;
+        &-circle{
+            width: 13px;
+            height: 13px;
+            background: #aaa;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(0,-50%);
+        }
+    }
+    .open{
+        background: $secondary;
+        border: $secondary;
+        .switch-circle{
+            animation-name: open;
+            animation-duration: 0.6s;
+            animation-fill-mode: forwards;
+        }
+    }
+    .close{
+        background: #fff;
+        border: 1px solid #aaa;
+        .switch-circle{
+            animation-name: close;
+            animation-duration: 0.6s;
+            animation-fill-mode: forwards;
+        }
+    }
+    @keyframes open{
+        0%{
+            left: 0;
+            background: #fff;
+        }
+        100%{
+            left: 60%;
+            background: #fff;
+        }
+    }
+    @keyframes close{
+        0%{
+            left: 60%;
+            background: #aaa;
+        }
+        100%{
+            left: 6%;
+            background: #aaa;
+        }
+    }
+}

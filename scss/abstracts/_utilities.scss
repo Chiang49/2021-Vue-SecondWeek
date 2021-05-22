@@ -1,0 +1,35 @@
+
+.text-right{
+    text-align: right;
+}
+
+.position-relative{
+    position: relative;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.align-end{
+    align-items: flex-end;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.row{
+    display: flex;
+    @include pad{
+        flex-wrap: wrap;
+    }
+}

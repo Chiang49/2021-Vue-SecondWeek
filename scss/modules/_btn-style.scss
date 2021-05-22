@@ -1,0 +1,38 @@
+
+.btn{
+    font-size: 1rem;
+    color: #fff;
+    background: $secondary;
+    padding: 8px 16px;
+    border: $secondary;
+    border-radius: 4px;
+    &:hover{
+        background: #0a54c4;
+        transition: 0.7s;
+    }
+}
+
+.deleteBtn{
+    font-size: 0.875rem;
+    color: red;
+    white-space: nowrap;
+    background: #fff;
+    padding: 4px 8px;
+    border: 1px solid red;
+    border-radius: 4px;
+    &:hover{
+        color: #fff;
+        background: red;
+        transition: 0.7s;
+    }
+}
+
+.disabledBtn{
+    font-size: 0.875rem;
+    color: #aaa;
+    white-space: nowrap;
+    background: #fff;
+    padding: 4px 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}

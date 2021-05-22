@@ -1,0 +1,79 @@
+
+.topic{
+    text-align: center;
+    @include pad{
+        margin-bottom: 60px;
+    }
+    h2{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: rgb(122, 122, 122);
+        margin-bottom: 24px;
+    }
+}
+
+.formTable{
+    width: 33.3%;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    margin-right: 1.7%;
+    text-align: left;
+    @include pad{
+        width: 100%;
+        margin-bottom: 28px;
+    }
+    h3{
+        color: #fff;
+        font-weight: bold;
+        padding: 16px;
+        background: $secondary;
+        border-bottom: 1px solid #aaa;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .product{
+        padding: 20px;
+    }
+}
+
+
+.productTable{
+    width: 65%;
+    text-align: left;
+    @include pad{
+        width: 100%;
+    }
+    table{
+        width: 100%;
+        margin-top: 16px;
+    }
+    thead tr{
+        border-bottom: 1px solid #000;
+    }
+    tr{
+        border-bottom: 1px solid #aaa;
+        vertical-align: middle;
+    }
+    th{
+        padding: 0 0 8px 8px;
+        white-space: nowrap;
+    }
+    td{
+        padding: 8px;
+    }
+    .noProduct{
+        text-align: center;
+        border-bottom: none;
+        td{
+            font-style: italic;
+            color: #aaa;
+            padding: 20px;
+        }
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+
+.header{
+    background: #fff;
+    padding: 30px 0;
+    border-bottom: 25px solid $secondary;
+    margin-bottom: 32px;
+    position: relative;
+    .logo{
+        color: $primary;
+        font-size: 1.75rem;
+        font-weight: bold;
+        padding: 10px;
+        &:hover{
+            color: $third;
+            transform: scale(1.05);
+            transition: 0.6s;
+        }
+    }
+}
+
+
+.material-icons{
+    display: none;
+    cursor: pointer;
+    transform: scale(1.5);
+    &:hover{
+        color: $third;
+        transform: scale(1.6);
+        transition: 0.6s;
+    }
+    @include mobile{
+        display: block;
+    }
+}
+
+.mainNav{
+    display: flex;
+    @include mobile{
+        display: block;
+        width: 100%;
+        max-height: 0;
+        text-align: center;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+    li{
+        margin-right: 20px;
+        &:last-child{
+            margin-right: 0;
+        }
+        @include mobile{
+            margin-right: 0;
+        }
+    }
+    a{
+        width: 100%;
+        font-size: 1.25rem;
+        color: $primary;
+        font-weight: bold;
+        background: #fff;
+        padding: 10px;
+        &:hover{
+            color: $secondary;
+            transition: 0.7s;
+        }
+        @include mobile{
+            padding: 8px 0;
+            margin-right: 0;
+            &:hover{
+                background: $primary;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.menuOpen{
+    max-height: 300px;
+}
