@@ -28,7 +28,7 @@ function login(){
                 document.cookie = `sixToken=${token};expired=${new Date(expired)}`;  //將token與expired 存到 cookie
                 
                 alert("登入成功");
-                window.location ="index.html";
+                window.location ="product.html";
 
             }else{
                 alert(res.data.message);
