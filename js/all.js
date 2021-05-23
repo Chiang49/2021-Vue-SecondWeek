@@ -30,7 +30,7 @@ const productPage = {
                 this.getData();
             }else{
                 alert("您已被登出");
-                window.location = "login.html";
+                window.location = "index.html";
             }
         })
         
@@ -42,7 +42,7 @@ const productPage = {
         .then((res) => {
             console.log(res);
             alert("登出成功!");
-            window.location = "login.html";
+            window.location = "index.html";
         })
         .catch((err) => {
             console.log(err);
