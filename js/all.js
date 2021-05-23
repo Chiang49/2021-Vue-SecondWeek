@@ -129,13 +129,6 @@ const productPage = {
         }
         this.statusChange(productIndex);
         
-        // axios.put(`${url}api/${path}/admin/product/:id`)
-        // .then((res) => {
-        //     console.log(res);
-        // })
-        // .catch((err) => {
-        //     console.log(err);
-        // })
     },
 
     // 狀態變化
