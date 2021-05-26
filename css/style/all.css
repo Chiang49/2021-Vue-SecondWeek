@@ -222,27 +222,28 @@ button {
   }
 }
 
-.mainNav a {
+.mainNav a, .mainNav button {
   width: 100%;
   font-size: 1.25rem;
   color: #698396;
   font-weight: bold;
   background: #fff;
   padding: 10px;
+  border: none;
 }
 
-.mainNav a:hover {
+.mainNav a:hover, .mainNav button:hover {
   color: #32485C;
   -webkit-transition: 0.7s;
   transition: 0.7s;
 }
 
 @media (max-width: 767px) {
-  .mainNav a {
+  .mainNav a, .mainNav button {
     padding: 8px 0;
     margin-right: 0;
   }
-  .mainNav a:hover {
+  .mainNav a:hover, .mainNav button:hover {
     background: #698396;
     color: #fff;
   }
@@ -267,7 +268,7 @@ button {
 }
 
 @media (max-width: 767px) {
-  .switch-group span {
+  .switch-group p {
     display: none;
   }
 }

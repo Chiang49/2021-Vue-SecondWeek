@@ -31,7 +31,11 @@ const productPage = {
             }else{
                 alert("您已被登出");
                 window.location = "index.html";
+                document.cookie = `sixToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
             }
+        })
+        .catch((res) => {
+            console.log(res);
         })
         
     },
@@ -40,9 +44,10 @@ const productPage = {
     signOut(){
         axios.post(`${url}logout`)
         .then((res) => {
-            console.log(res);
+            // console.log(res);
             alert("登出成功!");
             window.location = "index.html";
+            document.cookie = `sixToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
         })
         .catch((err) => {
             console.log(err);
@@ -68,7 +73,7 @@ const productPage = {
         }else{
 
             let obj =   {
-                "data": {
+                data: {
                     title: productName.value,
                     category: "衣服2",
                     origin_price: parseInt(originalPrice.value),
@@ -121,29 +126,30 @@ const productPage = {
     },
 
     // 產品啟用狀態
-    productStatus(productIndex){
-        if(!this.data.product[productIndex].is_enabled){    //0
-            this.data.product[productIndex].is_enabled = true; //1
+    productStatus(productId,productKey){
+        
+        if(this.data.product[productKey].is_enabled == 0){   
+            this.data.product[productKey].is_enabled = 1;
         }else{
-            this.data.product[productIndex].is_enabled = false; //0
+            this.data.product[productKey].is_enabled = 0;
         }
-        this.statusChange(productIndex);
+       
+        this.statusChange(productKey);
+
         
     },
 
     // 狀態變化
-    statusChange(productIndex){
-        const toggle = document.querySelectorAll('div[data-toggle="isStart"]');
-        const switchText = document.querySelectorAll('div[data-control="switchControl"] span');
-
-        if(!this.data.product[productIndex].is_enabled){
-            switchText[productIndex].textContent = "未啟用";//0
-            toggle[productIndex].classList.add('close');
-            toggle[productIndex].classList.remove('open');
+    statusChange(key){
+        
+        const toggle = document.querySelectorAll('div[data-switch="switch"]');
+    
+        if(!this.data.product[key].is_enabled){
+            toggle[key].classList.add('close');
+            toggle[key].classList.remove('open');
         }else{
-            switchText[productIndex].textContent = "啟用";//1
-            toggle[productIndex].classList.add('open');
-            toggle[productIndex].classList.remove('close');
+            toggle[key].classList.add('open');
+            toggle[key].classList.remove('close');
         }
     },
 
@@ -161,11 +167,11 @@ const productPage = {
                                 <td>${item.origin_price}</td>
                                 <td>${item.price}</td>
                                 <td class="position-relative">
-                                    <div class="switch-group"  data-control="switchControl">
-                                        <div class="switch" data-toggle="isStart" data-ID="${key}">
-                                            <div class="switch-circle"></div>
+                                    <div class="switch-group">
+                                        <div class="switch" data-switch="switch" data-toggle="status" data-ID="${item.id}" data-key="${key}">
+                                            <div class="switch-circle" data-toggle="status" data-ID="${item.id}" data-key="${key}"></div>
                                         </div>
-                                        <span>未啟用</span>
+                                        <p data-toggle="status" data-ID="${item.id}" data-key="${key}">${item.is_enabled?"啟用":"未啟用"}</p>
                                     </div>
                                 </td>
                                 <td><button type="button" class="deleteBtn" data-Btn="deleteThis" data-ID="${item.id}">刪除</button></td>
@@ -193,13 +199,12 @@ const productPage = {
             //單筆刪除
             if(e.target.getAttribute('data-Btn') === 'deleteThis'){
 
-                // let productId = e.target.getAttribute('data-ID');
                 this.deleteThisData(productId);
 
-            }else if(e.target.getAttribute('data-toggle') === 'isStart'){
-
-                let productIndex = e.target.getAttribute('data-ID');
-                this.productStatus(productIndex);
+            }else if(e.target.getAttribute('data-toggle') === 'status'){
+                
+                let productKey = e.target.getAttribute('data-key');
+                this.productStatus(productId,productKey);
 
             }
 

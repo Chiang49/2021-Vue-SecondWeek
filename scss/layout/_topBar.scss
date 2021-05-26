@@ -56,13 +56,14 @@
             margin-right: 0;
         }
     }
-    a{
+    a,button{
         width: 100%;
         font-size: 1.25rem;
         color: $primary;
         font-weight: bold;
         background: #fff;
         padding: 10px;
+        border: none;
         &:hover{
             color: $secondary;
             transition: 0.7s;
