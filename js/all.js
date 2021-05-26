@@ -47,7 +47,7 @@ const productPage = {
             // console.log(res);
             alert("登出成功!");
             window.location = "index.html";
-            document.cookie = `sixToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+            document.cookie = `sixToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/2021-Vue-SecondWeek;`;
         })
         .catch((err) => {
             console.log(err);

@@ -42,11 +42,11 @@
                         <div class="d-flex justify-content-between">
                             <div class="group-s">
                                 <label for="originalPrice">原價</label>
-                                <input type="number" min="0" name="originalPrice" id="originalPrice" placeholder="請輸入原價">
+                                <input type="number" min="0" name="originalPrice" id="originalPrice" placeholder="請輸入原價" onkeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))">
                             </div>
                             <div class="group-s">
                                 <label for="price">售價</label>
-                                <input type="number" min="0" name="price" id="price" placeholder="請輸入售價">
+                                <input type="number" min="0" name="price" id="price" placeholder="請輸入售價" onkeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))">
                             </div>
                         </div>
                         <div class="text-right">

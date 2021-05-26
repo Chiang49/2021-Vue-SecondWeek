@@ -32,6 +32,8 @@ function login(){
 
             }else{
                 alert(res.data.message);
+                email.value = "";
+                password.value = "";
             }
         })
         .catch((err) => {
